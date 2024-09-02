@@ -6,12 +6,14 @@
     <title>The band</title>
     <link rel="icon" href="https://cdn.sstatic.net/Sites/stackoverflow/Img/favicon.ico?v=ec617d715196favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="./assest/css/style.css">
+    <link rel="stylesheet" href="./assest/css/responsive.css">
     <link rel="stylesheet" href="./assest/font/themify-icons/themify-icons.css">
+  
 </head>
 <body>
     <div class="main">
 
-        <div class="header">
+        <div id = "headers" class="header">
             <!-- Begin: nav -->
             <ul class="nav">
                 <li><a href="#">Home</a></li>
@@ -19,7 +21,7 @@
                 <li><a href="#tour">Tour</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li>
-                    <a href="">
+                    <a href="#">
                         More
                         <i class="nav-arrow-down ti-angle-down"></i>
                     </a>
@@ -36,6 +38,9 @@
             <div class="search-btn">
                 <i class="search-icon ti-search"></i>
             </div>
+            <div id="mobile-menu" class="mobile-menu-btn">
+                <i class="menu-icon ti-menu"></i>
+            </div>
             <!-- end: search button -->
         </div>
 
@@ -46,7 +51,7 @@
                 </div>
             </div>
         </div>
-
+        <!-- footer -->
         <div class="content">
             <!-- About section -->
             <div id="band" class="content-section">
@@ -154,7 +159,7 @@
                 <img src="./assest/img/space/map.jpg" alt="map">
             </div>
         </div>
-
+        <!-- footer -->
         <div class="footer">
             <div class="socials-list">
                 <a href=""><i class="ti-facebook"></i></a>
@@ -203,6 +208,30 @@
         </div>
     </div>
 
+    <script>
+        var header = document.getElementById('headers');
+        var mobileMenu = document.getElementById('mobile-menu');
+        var headerHeight =header.clientHeight;
+        //  Đóng mở mobile menu
+        mobileMenu.onclick = function() {
+            var isClose = header.clientHeight === headerHeight;
+            if (isClose) {
+                header.style.height = 'auto';
+            } else {
+                header.style.height = null;
+            }
+        }
+
+        //  tự động đóng khi chọn menu
+        var menuItems = document.querySelectorAll('.nav li a[href*="#"]');
+        for (var i =0 ; i<menuItems.length ; i++) {
+            var menuItem = menuItems[i];
+            
+            menuItem.onclick = function() {
+                header.style.height = null;
+            }
+        }
+    </script>
     <!-- script nghe click -->
     <script>
         const buyBtns =document.querySelectorAll('.js-buy-ticket')
