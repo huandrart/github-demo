@@ -33,6 +33,7 @@ html {
     display: inline-block;
     margin-top: 15px;
     border: none;
+    text-align: center;
 }
 
 .btn:hover {
@@ -78,12 +79,16 @@ html {
     margin-top: 16px !important;
 }
 
+.mt-32 {
+    margin-top: 32px !important;
+}
+
 /* main */
 .main {
 
 }
 
-.header {
+#headers {
     height: 46px;
     background-color: #000;
     position: fixed;
@@ -91,7 +96,6 @@ html {
     left: 0;
     right: 0;
     z-index: 1;
-    overflow: hidden;
 }
 
 .nav {
@@ -150,27 +154,35 @@ html {
 .nav .nav-arrow-down {
     font-size: 14px;
 }
-.header .mobile-menu-btn,
-.header .search-btn {
-    float: right;
-    padding: 0 21px;
+#headers .mobile-menu-btn{
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
 }
 
-.header .search-btn:hover {
+#headers .mobile-menu-btn,
+#headers .search-btn {
+    float: right;
+    padding: 0 21px;
+    
+}
+
+#headers .search-btn:hover {
     background-color: #f44336;
     cursor: pointer;
 }
 
-.header .mobile-menu-btn:hover{
+#headers .mobile-menu-btn:hover{
     background: #ccc;
 }
 
-.header .mobile-menu-btn:hover .menu-icon{
+#headers .mobile-menu-btn:hover .menu-icon{
     color: #000;
 }
 
-.header .menu-icon,
-.header .search-icon {
+#headers .menu-icon,
+#headers .search-icon {
     color: #fff;
     font-size: 20px;
     line-height: 46px;
@@ -240,7 +252,7 @@ html {
 }
 
 .content .member-list {
-    margin-top: 48px;
+    margin-top: 32px;
     overflow: hidden;
     /* khac phuc float */
 }
@@ -412,7 +424,7 @@ html {
     position: relative;
     animation: modalFadeIn ease .6s;
 }
-.header.modal.header {
+#headers.modal.header{
     background: #009688;
     height: 130px;
     display: flex;
@@ -434,6 +446,7 @@ html {
     padding: 12px;
     cursor: pointer;
     opacity: 0.9;
+    background: red;
 }
 
 .modal-close:hover {
