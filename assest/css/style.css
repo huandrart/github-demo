@@ -34,6 +34,8 @@ html {
     margin-top: 15px;
     border: none;
     text-align: center;
+    appearance: none;
+    -webkit-appearance: none;
 }
 
 .btn:hover {
@@ -352,8 +354,16 @@ html {
 
 .contact-info i[class*="ti-"] {
     width: 30px;
-    display: inline-block;
-    
+    display: inline-block;   
+}
+
+.contact-info a {
+    color: #101aef;
+    opacity: 0.8;
+}
+
+.contact-info a:hover {
+    opacity: 1;
 }
 
 .contact-form {
